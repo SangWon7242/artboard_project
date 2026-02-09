@@ -1,0 +1,47 @@
+// ==============================================
+// Form Component Styles
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.form {
+  &__group {
+    margin-bottom: $spacing-md;
+  }
+
+  &__label {
+    display: block;
+    font-size: $fs-small;
+    font-weight: $fw-medium;
+    color: $text-dark;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: $fs-body;
+    color: $text-dark;
+    background: $bg-white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: $radius-md;
+    @include smooth-transition;
+    @include focus-visible;
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 4px rgba($color-primary, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-light;
+    }
+  }
+
+  &__textarea {
+    @extend .form__input;
+    min-height: 120px;
+    resize: vertical;
+  }
+}

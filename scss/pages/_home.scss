@@ -1,0 +1,304 @@
+// ==============================================
+// Home Page - Neo-Brutalism Pinterest Gallery
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+// Main Layout
+.main {
+  padding-top: 80px; // Header height
+  min-height: 100vh;
+  background: $bg-cream;
+}
+
+// Hero Section
+.hero {
+  padding: $spacing-2xl $container-padding;
+  text-align: center;
+  background: $bg-cream;
+  border-bottom: $border-width $border-style $border-color;
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__badge {
+    @include brutal-tag($color-secondary);
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-hero;
+    font-weight: $fw-bold;
+    line-height: 1;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+
+    .highlight {
+      display: inline-block;
+      padding: 0 $spacing-sm;
+      background: $color-secondary;
+      @include brutal-border;
+      box-shadow: $shadow-brutal-sm;
+    }
+  }
+
+  &__subtitle {
+    font-size: $fs-body-lg;
+    color: $text-medium;
+    max-width: 600px;
+    margin: 0 auto $spacing-lg;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+
+  // Decorative Elements
+  &__deco {
+    position: absolute;
+    pointer-events: none;
+
+    &--1 {
+      top: 20%;
+      left: 5%;
+      width: 60px;
+      height: 60px;
+      background: $color-accent-orange;
+      @include brutal-border;
+      transform: rotate(15deg);
+    }
+
+    &--2 {
+      top: 30%;
+      right: 8%;
+      width: 40px;
+      height: 40px;
+      background: $color-primary;
+      @include brutal-border;
+      border-radius: 50%;
+    }
+
+    &--3 {
+      bottom: 20%;
+      left: 10%;
+      width: 80px;
+      height: 20px;
+      background: $color-secondary;
+      @include brutal-border;
+    }
+  }
+}
+
+// Filter Section
+.filters {
+  padding: $spacing-lg $container-padding;
+  background: $bg-white;
+  border-bottom: $border-width $border-style $border-color;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  &__categories {
+    display: flex;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+  }
+
+  &__category {
+    padding: 0.5rem 1rem;
+    font-size: $fs-small;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    @include brutal-border(2px);
+    background: $bg-white;
+    cursor: pointer;
+    @include brutal-hover;
+
+    &--active {
+      background: $color-secondary;
+      box-shadow: $shadow-brutal-sm;
+    }
+  }
+
+  &__sort {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    select {
+      padding: 0.5rem 1rem;
+      font-family: $font-primary;
+      font-size: $fs-small;
+      font-weight: $fw-bold;
+      @include brutal-border(2px);
+      background: $bg-white;
+      cursor: pointer;
+    }
+  }
+}
+
+// Masonry Gallery
+.gallery {
+  padding: $spacing-xl $container-padding;
+  max-width: $container-max;
+  margin: 0 auto;
+
+  &__grid {
+    @include masonry-grid;
+  }
+
+  &__load-more {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-xl 0;
+  }
+}
+
+// Featured Section
+.featured {
+  padding: $spacing-2xl $container-padding;
+  background: $color-secondary;
+  border-top: $border-width $border-style $border-color;
+  border-bottom: $border-width $border-style $border-color;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+  }
+
+  &__header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-h2;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-md;
+  }
+}
+
+// Stats Bar
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-xl;
+  padding: $spacing-lg $container-padding;
+  background: $bg-white;
+  border-bottom: $border-width $border-style $border-color;
+
+  &__item {
+    text-align: center;
+  }
+
+  &__value {
+    font-family: $font-display;
+    font-size: $fs-h2;
+    font-weight: $fw-bold;
+    color: $color-primary;
+  }
+
+  &__label {
+    font-size: $fs-small;
+    font-weight: $fw-medium;
+    color: $text-medium;
+    text-transform: uppercase;
+  }
+}
+
+// 3D Model Section (keeping Spline integration)
+.model-section {
+  padding: $spacing-3xl $container-padding;
+  background: $bg-cream;
+  border-top: $border-width $border-style $border-color;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    gap: $spacing-md;
+  }
+
+  &__badge {
+    @include brutal-tag($color-accent-orange);
+    color: $text-white;
+    width: fit-content;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-h1;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  &__description {
+    font-size: $fs-body-lg;
+    color: $text-medium;
+    line-height: 1.6;
+  }
+
+  &__model {
+    position: relative;
+    min-height: 400px;
+    @include brutal-border;
+    background: $bg-white;
+    box-shadow: $shadow-brutal-lg;
+    overflow: hidden;
+
+    @include desktop {
+      min-height: 500px;
+    }
+
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  &__model-label {
+    position: absolute;
+    bottom: $spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    @include brutal-tag($color-secondary);
+    z-index: 10;
+  }
+}

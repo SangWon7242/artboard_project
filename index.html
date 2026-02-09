@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="크리에이티브 작품을 발견하고 영감을 얻는 네오브루탈리즘 갤러리"
+    />
+
+    <!-- Title -->
+    <title>Artboard | 크리에이티브 갤러리</title>
+
+    <!-- Google Fonts - Space Grotesk & Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Pretendard Font (Korean) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='10' y='10' width='80' height='80' fill='%23ffcc00' stroke='%231a1a1a' stroke-width='6'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header__container">
+        <!-- Logo -->
+        <a href="#" class="header__logo">
+          <span class="header__logo-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+          </span>
+          Artboard
+        </a>
+
+        <!-- Search -->
+        <div class="header__search">
+          <div class="header__search-wrapper">
+            <span class="header__search-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </span>
+            <input
+              type="text"
+              class="header__search-input"
+              placeholder="작품 검색..."
+              id="searchInput"
+            />
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" id="nav">
+          <a href="#" class="header__nav-link header__nav-link--active"
+            >Explore</a
+          >
+          <a href="#" class="header__nav-link">Trending</a>
+          <a href="#" class="header__nav-link">Following</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="header__actions">
+          <button class="header__action-btn" aria-label="알림">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </button>
+          <button
+            class="header__action-btn header__action-btn--primary"
+            aria-label="업로드"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button class="header__menu-btn" id="menuBtn" aria-label="메뉴 열기">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <span class="header__logo">Artboard</span>
+        <button class="sidebar__close" id="sidebarClose" aria-label="메뉴 닫기">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link">Explore</a>
+        <a href="#" class="sidebar__link">Trending</a>
+        <a href="#" class="sidebar__link">Following</a>
+        <a href="#" class="sidebar__link">Collections</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <!-- Decorative Elements -->
+        <div class="hero__deco hero__deco--1"></div>
+        <div class="hero__deco hero__deco--2"></div>
+        <div class="hero__deco hero__deco--3"></div>
+        <div class="hero__deco hero__deco--4"></div>
+
+        <div class="hero__container">
+          <span class="hero__badge">Visual Inspiration</span>
+          <h1 class="hero__title">
+            Discover<br /><span class="highlight">Creative</span> Works
+          </h1>
+          <p class="hero__subtitle">
+            전 세계 크리에이터들의 영감 넘치는 작품을 발견하세요. 그래픽 디자인,
+            일러스트레이션, 타이포그래피 등 다양한 창작물을 만나보세요.
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary btn--lg">탐색 시작</button>
+            <button class="btn btn--secondary btn--lg">내 작품 업로드</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Section -->
+      <section class="filters">
+        <div class="filters__container">
+          <div class="filters__categories">
+            <button class="filters__category filters__category--active">
+              All
+            </button>
+            <button class="filters__category">Illustration</button>
+            <button class="filters__category">Graphic Design</button>
+            <button class="filters__category">Typography</button>
+            <button class="filters__category">3D Art</button>
+            <button class="filters__category">Photography</button>
+            <button class="filters__category">UI/UX</button>
+          </div>
+          <div class="filters__sort">
+            <select>
+              <option>Most Recent</option>
+              <option>Most Popular</option>
+              <option>Most Liked</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Masonry Gallery -->
+      <section class="gallery">
+        <div class="gallery__grid" id="galleryGrid">
+          <!-- Card 1 - Tall -->
+          <article class="card card--yellow">
+            <img
+              src="https://picsum.photos/400/600?random=1"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Abstract Geometry</h3>
+              <div class="card__tags">
+                <span class="tag tag--blue">Illustration</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=1"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">김민준</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 - Short -->
+          <article class="card card--blue">
+            <img
+              src="https://picsum.photos/400/300?random=2"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Neon Typography</h3>
+              <div class="card__tags">
+                <span class="tag tag--orange">Typography</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=2"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">이서연</span>
+              </div>
+              <div class="card__actions">
+                <button
+                  class="card__action-btn card__action-btn--liked"
+                  aria-label="좋아요"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 - Medium -->
+          <article class="card">
+            <img
+              src="https://picsum.photos/400/450?random=3"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Digital Landscape</h3>
+              <div class="card__tags">
+                <span class="tag">3D Art</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=3"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">박지훈</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 - Tall -->
+          <article class="card card--orange">
+            <img
+              src="https://picsum.photos/400/550?random=4"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Retro Poster Design</h3>
+              <div class="card__tags">
+                <span class="tag tag--pink">Graphic Design</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=4"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">최유나</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 - Short -->
+          <article class="card card--pink">
+            <img
+              src="https://picsum.photos/400/280?random=5"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Minimalist Icons</h3>
+              <div class="card__tags">
+                <span class="tag tag--yellow">UI/UX</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=5"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">정하늘</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 - Medium -->
+          <article class="card card--green">
+            <img
+              src="https://picsum.photos/400/400?random=6"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Character Design</h3>
+              <div class="card__tags">
+                <span class="tag tag--blue">Illustration</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=6"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">강도윤</span>
+              </div>
+              <div class="card__actions">
+                <button
+                  class="card__action-btn card__action-btn--liked"
+                  aria-label="좋아요"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="card">
+            <img
+              src="https://picsum.photos/400/350?random=7"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Brand Identity</h3>
+              <div class="card__tags">
+                <span class="tag tag--orange">Graphic Design</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=7"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">윤서아</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8 - Tall -->
+          <article class="card card--yellow">
+            <img
+              src="https://picsum.photos/400/520?random=8"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Motion Graphics</h3>
+              <div class="card__tags">
+                <span class="tag">Animation</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=8"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">임재현</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="card card--blue">
+            <img
+              src="https://picsum.photos/400/380?random=9"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Editorial Layout</h3>
+              <div class="card__tags">
+                <span class="tag tag--pink">Typography</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=9"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">한소희</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 10 -->
+          <article class="card card--orange">
+            <img
+              src="https://picsum.photos/400/480?random=10"
+              alt="Creative artwork"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h3 class="card__title">Isometric Scene</h3>
+              <div class="card__tags">
+                <span class="tag tag--blue">3D Art</span>
+              </div>
+            </div>
+            <div class="card__footer">
+              <div class="card__author">
+                <img
+                  src="https://i.pravatar.cc/100?img=10"
+                  alt="Author"
+                  class="card__author-avatar"
+                />
+                <span class="card__author-name">노예진</span>
+              </div>
+              <div class="card__actions">
+                <button class="card__action-btn" aria-label="좋아요">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <button class="card__action-btn" aria-label="저장">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="gallery__load-more">
+          <button class="btn btn--primary btn--lg">더 보기</button>
+        </div>
+      </section>
+
+      <!-- 3D Model Section -->
+      <section class="model-section">
+        <div class="model-section__container">
+          <div class="model-section__content">
+            <span class="model-section__badge">Interactive 3D</span>
+            <h2 class="model-section__title">3D 아트를<br />경험하세요</h2>
+            <p class="model-section__description">
+              인터랙티브한 3D 모델을 직접 조작해보세요. 마우스로 드래그하여
+              다양한 각도에서 작품을 감상할 수 있습니다.
+            </p>
+            <div class="btn-group">
+              <button class="btn btn--primary">3D 갤러리 둘러보기</button>
+              <button class="btn btn--secondary">작품 제출하기</button>
+            </div>
+          </div>
+          <div class="model-section__model">
+            <iframe
+              src="https://my.spline.design/interactivecubes-wljhCNwrr9Qa7CwBDlNIbx6q/"
+              frameborder="0"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              title="Interactive 3D Cubes"
+            ></iframe>
+            <span class="model-section__model-label">마우스로 조작</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__logo">Art<span>board</span></div>
+          <nav class="footer__links">
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Blog</a>
+            <a href="#" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Privacy</a>
+          </nav>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2025 Artboard. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

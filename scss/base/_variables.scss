@@ -1,0 +1,112 @@
+// ==============================================
+// Design Variables - Neo-Brutalism Theme
+// ==============================================
+
+// Colors - Primary Palette (Bold & Vibrant)
+$color-primary: #3d5afe; // Electric Blue
+$color-primary-dark: #304ffe;
+$color-primary-light: #536dfe;
+
+$color-secondary: #ffcc00; // Bright Yellow
+$color-accent-orange: #ff6d00; // Vibrant Orange
+$color-accent-red: #ff1744; // Bold Red
+$color-accent-green: #00e676; // Neon Green
+$color-accent-pink: #ff4081; // Hot Pink
+$color-accent-cyan: #00e5ff; // Cyan
+
+// Colors - Background
+$bg-cream: #f5f0e8; // Warm Cream (Neo-Brutalism typical)
+$bg-light: #fafafa;
+$bg-white: #ffffff;
+$bg-dark: #1a1a1a;
+$bg-beige: #f0ead6;
+
+// Colors - Text
+$text-dark: #1a1a1a;
+$text-medium: #4a4a4a;
+$text-light: #7a7a7a;
+$text-white: #ffffff;
+
+// Border (Neo-Brutalism key element)
+$border-color: #1a1a1a;
+$border-width: 3px;
+$border-width-thick: 4px;
+$border-style: solid;
+
+// Typography
+$font-primary:
+  "Space Grotesk",
+  "Pretendard",
+  -apple-system,
+  BlinkMacSystemFont,
+  sans-serif;
+$font-display: "Space Grotesk", sans-serif;
+$font-mono: "Space Mono", monospace;
+
+// Font Sizes
+$fs-hero: clamp(3rem, 8vw, 6rem);
+$fs-h1: clamp(2.5rem, 5vw, 4rem);
+$fs-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+$fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+$fs-body: 1rem;
+$fs-body-lg: 1.125rem;
+$fs-small: 0.875rem;
+$fs-xs: 0.75rem;
+
+// Font Weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+$spacing-3xl: 6rem;
+
+// Border Radius (Neo-Brutalism uses minimal or no radius)
+$radius-none: 0;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-pill: 100px;
+
+// Neo-Brutalism Shadows (Offset shadows)
+$shadow-brutal: 4px 4px 0 $border-color;
+$shadow-brutal-sm: 2px 2px 0 $border-color;
+$shadow-brutal-lg: 6px 6px 0 $border-color;
+$shadow-brutal-hover: 6px 6px 0 $border-color;
+$shadow-brutal-active: 2px 2px 0 $border-color;
+
+// Colored Shadows
+$shadow-yellow: 4px 4px 0 $color-secondary;
+$shadow-blue: 4px 4px 0 $color-primary;
+$shadow-orange: 4px 4px 0 $color-accent-orange;
+$shadow-pink: 4px 4px 0 $color-accent-pink;
+
+// Transitions
+$transition-fast: 0.1s ease;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1280px;
+$bp-ultrawide: 1536px;
+
+// Container
+$container-max: 1600px;
+$container-padding: 1.5rem;
+
+// Masonry Grid
+$masonry-gap: 1.5rem;
+$masonry-columns-mobile: 2;
+$masonry-columns-tablet: 3;
+$masonry-columns-desktop: 4;
+$masonry-columns-wide: 5;

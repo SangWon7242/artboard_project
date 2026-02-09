@@ -1,0 +1,59 @@
+// ==============================================
+// Footer Layout Styles
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.footer {
+  padding: $spacing-2xl $container-padding;
+  background: $bg-dark;
+  color: $text-white;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+  }
+
+  &__top {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-xl;
+    padding-bottom: $spacing-xl;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+
+    span {
+      @include gradient-text(
+        linear-gradient(135deg, $accent-blue, $accent-purple)
+      );
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: $fs-small;
+    @include smooth-transition;
+
+    &:hover {
+      color: $text-white;
+    }
+  }
+
+  &__bottom {
+    padding-top: $spacing-lg;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: $fs-small;
+  }
+}

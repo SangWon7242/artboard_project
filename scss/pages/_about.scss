@@ -1,0 +1,25 @@
+// ==============================================
+// About Page Styles (Placeholder)
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.about {
+  padding: $spacing-3xl $container-padding;
+  padding-top: calc($spacing-3xl + 80px);
+  min-height: 100vh;
+  background: $bg-white;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $fs-h1;
+    font-weight: $fw-bold;
+    color: $text-dark;
+    margin-bottom: $spacing-lg;
+  }
+}

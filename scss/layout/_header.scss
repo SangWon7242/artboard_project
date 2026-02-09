@@ -1,0 +1,172 @@
+// ==============================================
+// Header Layout - Neo-Brutalism Style
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: $spacing-sm $container-padding;
+  background: $bg-cream;
+  @include brutal-border;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    @include flex-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-family: $font-display;
+    font-size: 1.75rem;
+    font-weight: $fw-bold;
+    color: $text-dark;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+
+    // Logo Icon Box
+    &-icon {
+      width: 40px;
+      height: 40px;
+      @include flex-center;
+      background: $color-secondary;
+      @include brutal-border;
+      box-shadow: $shadow-brutal-sm;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  // Search Bar
+  &__search {
+    display: none;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 $spacing-xl;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-left: 2.75rem;
+    font-family: $font-primary;
+    font-size: $fs-body;
+    background: $bg-white;
+    @include brutal-border;
+    box-shadow: $shadow-brutal-sm;
+    @include smooth-transition;
+
+    &::placeholder {
+      color: $text-light;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadow-brutal;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: $spacing-sm;
+    color: $text-medium;
+    pointer-events: none;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  // Navigation
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      gap: $spacing-xs;
+    }
+  }
+
+  &__nav-link {
+    padding: 0.5rem 1rem;
+    font-size: $fs-body;
+    font-weight: $fw-bold;
+    color: $text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    @include brutal-border;
+    background: $bg-white;
+    box-shadow: $shadow-brutal-sm;
+    @include brutal-hover;
+
+    &--active {
+      background: $color-secondary;
+    }
+  }
+
+  // Actions
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+  }
+
+  &__action-btn {
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    @include brutal-border;
+    background: $bg-white;
+    box-shadow: $shadow-brutal-sm;
+    cursor: pointer;
+    @include brutal-hover;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &--primary {
+      background: $color-primary;
+      color: $text-white;
+    }
+  }
+
+  &__menu-btn {
+    @include brutal-border;
+    background: $bg-white;
+    box-shadow: $shadow-brutal-sm;
+    padding: $spacing-xs;
+    cursor: pointer;
+    @include brutal-hover;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

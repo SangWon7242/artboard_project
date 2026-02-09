@@ -1,0 +1,77 @@
+// ==============================================
+// Sidebar Layout Styles
+// ==============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
+  height: 100vh;
+  background: $bg-white;
+  box-shadow: $shadow-xl;
+  z-index: 1001;
+  @include smooth-transition;
+  @include flex-column;
+
+  &--open {
+    right: 0;
+  }
+
+  &__header {
+    @include flex-between;
+    padding: $spacing-lg;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__close {
+    padding: $spacing-xs;
+    @include smooth-transition;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: $radius-sm;
+    }
+  }
+
+  &__nav {
+    flex: 1;
+    padding: $spacing-lg;
+    @include flex-column;
+    gap: $spacing-sm;
+  }
+
+  &__link {
+    padding: $spacing-sm $spacing-md;
+    font-size: $fs-body-lg;
+    font-weight: $fw-medium;
+    color: $text-dark;
+    border-radius: $radius-md;
+    @include smooth-transition;
+
+    &:hover {
+      background: rgba($color-primary, 0.08);
+      color: $color-primary;
+    }
+  }
+}
+
+// Overlay
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  @include smooth-transition;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

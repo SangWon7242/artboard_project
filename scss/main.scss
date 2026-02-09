@@ -1,0 +1,103 @@
+// ==============================================
+// Main SCSS Entry Point
+// ==============================================
+// Imports all partials and compiles to CSS
+
+// Base
+@use "base/reset";
+@use "base/variables" as *;
+@use "base/mixins" as *;
+
+// Components
+@use "components/button";
+@use "components/card";
+@use "components/form";
+
+// Layout
+@use "layout/header";
+@use "layout/footer";
+@use "layout/sidebar";
+
+// Pages
+@use "pages/home";
+@use "pages/about";
+@use "pages/contact";
+
+// ==============================================
+// Global Styles
+// ==============================================
+
+body {
+  font-family: $font-primary;
+  color: $text-dark;
+  background: $bg-white;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Section
+.section {
+  padding: $spacing-3xl 0;
+
+  &--dark {
+    background: $bg-dark;
+    color: $text-white;
+  }
+
+  &--gradient {
+    background: linear-gradient(135deg, $bg-gradient-start, $bg-gradient-mid);
+  }
+}
+
+// Typography Utilities
+.text-gradient {
+  @include gradient-text(linear-gradient(135deg, $accent-blue, $accent-purple));
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Animations
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Stagger delays
+@for $i from 1 through 6 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
+}

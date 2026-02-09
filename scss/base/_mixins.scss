@@ -1,0 +1,149 @@
+// ==============================================
+// Mixins & Utilities - Neo-Brutalism
+// ==============================================
+
+@use "variables" as *;
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: #{$bp-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $bp-tablet) and (max-width: #{$bp-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: $bp-wide) {
+    @content;
+  }
+}
+
+// Neo-Brutalism Border
+@mixin brutal-border($width: $border-width, $color: $border-color) {
+  border: $width $border-style $color;
+}
+
+// Neo-Brutalism Box (with shadow)
+@mixin brutal-box($shadow: $shadow-brutal) {
+  @include brutal-border;
+  box-shadow: $shadow;
+  background: $bg-white;
+}
+
+// Neo-Brutalism Hover Effect
+@mixin brutal-hover {
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: $shadow-brutal-hover;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: $shadow-brutal-active;
+  }
+}
+
+// Colored Box Variants
+@mixin brutal-box-yellow {
+  @include brutal-border;
+  background: $color-secondary;
+  box-shadow: $shadow-brutal;
+}
+
+@mixin brutal-box-blue {
+  @include brutal-border;
+  background: $color-primary;
+  box-shadow: $shadow-brutal;
+  color: $text-white;
+}
+
+@mixin brutal-box-orange {
+  @include brutal-border;
+  background: $color-accent-orange;
+  box-shadow: $shadow-brutal;
+  color: $text-white;
+}
+
+// Tag/Badge Style
+@mixin brutal-tag($bg: $bg-white) {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: $fs-xs;
+  font-weight: $fw-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: $bg;
+  @include brutal-border(2px);
+  box-shadow: 2px 2px 0 $border-color;
+}
+
+// Focus Visible
+@mixin focus-visible {
+  &:focus-visible {
+    outline: 3px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+// Smooth Transition
+@mixin smooth-transition($property: all) {
+  transition: $property $transition-base;
+}
+
+// Masonry Grid
+@mixin masonry-grid {
+  column-count: $masonry-columns-mobile;
+  column-gap: $masonry-gap;
+
+  @media (min-width: $bp-tablet) {
+    column-count: $masonry-columns-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    column-count: $masonry-columns-desktop;
+  }
+
+  @media (min-width: $bp-wide) {
+    column-count: $masonry-columns-wide;
+  }
+}
+
+// Masonry Item
+@mixin masonry-item {
+  break-inside: avoid;
+  margin-bottom: $masonry-gap;
+}
